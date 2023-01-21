@@ -6,7 +6,7 @@ class Buffer:
 	MAGIC_NUMBER = b'CPTN\n'
 
 	def create_new(self, content: str, caption: str, filename: typing.Optional[str] = None):
-		'''Fill the FileBUffer with some'''
+		'''Fill the Buffer with some data'''
 		if filename is None:
 			filename = ''
 		filename_size = len(filename)
@@ -31,6 +31,7 @@ class Buffer:
 		self.header = header
 
 	def read_from_bytes(self, buffer: bytes, get_header: typing.Optional[bool] = False):
+		''' Fill Buffer with data from bytes'''
 		magic_number = struct.unpack(">5s", buffer[:5])[0]
 		if magic_number != self.MAGIC_NUMBER:
 			raise errors.NoMagicNumber("Expected magic number 0x4350544E0A in the beginning of the buffer provided")
@@ -65,7 +66,7 @@ class Buffer:
 		return output
 
 	def get_bytes(self) -> bytes:
-		'''Get bytes object to be written to file'''
+		'''Get bytes object from Buffer data'''
 		return self.header+b''.join(
 			data.encode("UTF-8") for data in (self.filename, self.caption, self.content)
 		)
