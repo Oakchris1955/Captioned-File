@@ -1,9 +1,6 @@
+from . import errors
 import typing
 import struct
-
-class SizeOverflow(Exception): pass
-
-class NoMagicNumber(Exception): pass
 
 class FileBuffer:
 	MAGIC_NUMBER = b'CPTN\n'
@@ -23,9 +20,9 @@ class FileBuffer:
 		self.content = content
 
 		if filename_size >= 2**8:
-			raise SizeOverflow(f"Filename size must be under {2**8} bytes")
+			raise errors.SizeOverflow(f"Filename size must be under {2**8} bytes")
 		if caption_size >= 2**16:
-			raise SizeOverflow(f"Caption size must be less than {2**16} bytes")
+			raise errors.SizeOverflow(f"Caption size must be less than {2**16} bytes")
 
 		header = bytes()
 		header += struct.pack('>5s', self.MAGIC_NUMBER)
@@ -36,7 +33,7 @@ class FileBuffer:
 	def read_from_bytes(self, buffer: bytes, get_header: typing.Optional[bool] = False):
 		magic_number = struct.unpack(">5s", buffer[:5])[0]
 		if magic_number != self.MAGIC_NUMBER:
-			raise NoMagicNumber("Expected magic number 0x4350544E0A in the beginning of the buffer provided")
+			raise errors.NoMagicNumber("Expected magic number 0x4350544E0A in the beginning of the buffer provided")
 		
 		filename_size, caption_size = struct.unpack(">BH", buffer[5:8])
 
