@@ -2,10 +2,10 @@ from . import errors
 import typing
 import struct
 
-class FileBuffer:
+class Buffer:
 	MAGIC_NUMBER = b'CPTN\n'
 
-	def create_new(self, content: str, caption: str, filename: typing.Optional[str]):
+	def create_new(self, content: str, caption: str, filename: typing.Optional[str] = None):
 		'''Fill the FileBUffer with some'''
 		if filename is None:
 			filename = ''
