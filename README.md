@@ -17,8 +17,8 @@ The header data are in the following format:
 | Offset | Size | Name          | Description                                                                                   |
 |--------|------|---------------|-----------------------------------------------------------------------------------------------|
 | 0      | 5    | Magic number  | Magic number 0x4350544E0A (CPTN/n)                                                            |
-| 6      | 1    | Filename size | Filename size in bytes or characters (it can also contain nothing, AKA 0x00 AKA a null byte)                    |
-| 7      | 2    | Caption size  | Length of the caption text in bytes (max is 2^16 or about 65k, probably enough for a caption) |
+| 5      | 1    | Filename size | Filename size in bytes or characters (it can also contain nothing, AKA 0x00 AKA a null byte)                    |
+| 6      | 2    | Caption size  | Length of the caption text in bytes (max is 2^16 or about 65k, probably enough for a caption) |
 
 ### Payload
 
