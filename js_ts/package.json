@@ -1,0 +1,32 @@
+{
+  "name": "captionedfileformat",
+  "version": "1.0.0",
+  "description": "A JavaScript-TypeScript wrapper for the Captioned File (CPTN) file format",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oakchris1955/Captioned-File.git"
+  },
+  "keywords": [
+    "file",
+    "fileformat",
+    "ts",
+    "caption",
+    "captionedfile",
+    "captioned",
+    "format"
+  ],
+  "author": "Oakchris1955",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Oakchris1955/Captioned-File/issues"
+  },
+  "homepage": "https://github.com/Oakchris1955/Captioned-File#readme",
+  "files": [
+    "out/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "typescript": "^4.9.5"
+  }
+}

@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"module": "ESNext",
+		"target": "ESNext",
+		"outDir": "./out",
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"preserveConstEnums": true,
+		"declaration": true,
+		"strict": true
+	},
+	"files": [
+	  "index.ts"
+	]
+}
