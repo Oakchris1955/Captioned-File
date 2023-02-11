@@ -1,6 +1,6 @@
 {
   "name": "captionedfileformat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JavaScript-TypeScript wrapper for the Captioned File (CPTN) file format",
   "main": "index.js",
   "repository": {

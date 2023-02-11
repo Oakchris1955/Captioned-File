@@ -113,8 +113,9 @@ export class CPTNBuffer {
 
 	/**
 	 * Get Buffer object containing bytes to be written to a file following the CPTN format
+	 * @returns {Buffer}
 	 */
-	public static get_bytes() {
+	public static get_bytes(): Buffer {
 		if (
 			this.header === undefined ||
 			this.filename === undefined ||
